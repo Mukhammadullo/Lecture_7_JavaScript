@@ -31,10 +31,10 @@ foo(function(value){
 
 ```js
 function main(a) {
-  return new Promise(resolve => setTimeout(resolve, ms));
+  return new Promise(resolve => setTimeout(resolve, a));
 }
 
-main(2000).then(() => console.log('2 seconds'));
+main(2000).then(() => console.log("4 seconds"));
 
 
 fetch('http://example.com/data.json')
