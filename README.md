@@ -1,5 +1,19 @@
-# 1.What is Synchronous?
-_Synchronous is the execution of tasks, code or functions sequentially, that is, each task begins only when the previous one has completed. The browser often uses synchronous operations when it must complete some interactive task before rendering._
+# 1.What is Synchronous in JavaScript?
+>_JavaScript is synchronous by default:Synchronous code is executed line by line.Each line of code waits for previous line to finish;_
+>_Long-running operations  block code execution_
+
+```js
+
+let one="Hello from first line"
+let second="Hello from second line"
+let third="Hello from third line"
+
+console.log(one, second, third) 
+// "Hello from first line"
+// "Hello from second line"
+// "Hello from third line"
+```
+
 # 2.what is Asynchronous?
 _Asynchronous in JavaScript is a programming paradigm that allows you to run multiple tasks simultaneously in a single process and work with large amounts of data without blocking other tasks._
 
