@@ -14,9 +14,8 @@ console.log(one, second, third)
 // "Hello from third line"
 ```
 
-# 2.what is Asynchronous?
+# 2.What is Asynchronous?
 _Asynchronous in JavaScript is a programming paradigm that allows you to run multiple tasks simultaneously in a single process and work with large amounts of data without blocking other tasks._
-
 _In JavaScript, asynchrony is achieved through callbacks, promises, and asynchronous functions. For example, methods such as setTimeout(), setInterval() and asynchronous AJAX requests are asynchronous._
 
 
@@ -35,7 +34,7 @@ function new(callback){
     },1000)
 }
 
-foo(function(value){
+new(function(value){
     consol.log(value)
 });
 ```
