@@ -15,18 +15,34 @@ console.log(one, second, third)
 ```
 
 # 2.What is Asynchronous?
-_Asynchronous in JavaScript is a programming paradigm that allows you to run multiple tasks simultaneously in a single process and work with large amounts of data without blocking other tasks._
-_In JavaScript, asynchrony is achieved through callbacks, promises, and asynchronous functions. For example, methods such as setTimeout(), setInterval() and asynchronous AJAX requests are asynchronous._
 
+_Asynchronicity means that if JavaScript has to wait for an operation to complete, it will execute the rest of the code while waiting._
+_JavaScript can behave in an asynchronous way. Let’s have a look at some techniques that are useful for asynchronous JavaScript:_
 
+>1._promises-writing asynchronous JavaScript code is made easy with promises.  They enable you to create code that runs after a predetermined period of time or when a predetermined condition is satisfied._
+_A promise may have one of three states
+• Pending
+• Fulfilled
+• Rejected_
 ```js
-setTimeout(function(){
-    console.log('Hello new Line!');
-}, 2000);
+
+function newPromise(url){
+return new Promise ((resolve,reject)=>{
+fetch(url)
+.then(response=>response.json())
+.then(data=>resolve(data))
+.catch(error=>reject(error));
+});
+}
+
+newPromise("https://jsonplacholder.typicode.com/todos/1")
+.then(data=>console.log(data))
+.catch(error=>console.error(error));
+
 ```
 
-# 3.Callback-Callbacks are functions that are passed as arguments to other functions and are executed when the called function completes its task. Callbacks can be used to handle asynchronous operations by passing a callback function to an asynchronous method, which then calls the callback function when the operation is completed.
 
+>2._callbacks-this allows for asynchronous code to be written in a synchronous fashion._
 ```js
 function new(callback){
     setTimeout(function(){
@@ -38,20 +54,40 @@ new(function(value){
     consol.log(value)
 });
 ```
-
-
-# 4.New Promise -A Promise is an object that represents an activity that can be completed and return a result in the future, including an asynchronous operation.
+>3._async/await-async/await is a more recent technique for creating asynchronous JavaScript code. It helps you write more succinct and readable code that will execute after a set period of time or when a set condition is met._
 
 ```js
-function main(a) {
-  return new Promise(resolve => setTimeout(resolve, a));
+let url="https://jsonplacholder.typicode.com/todos/1"
+
+async function getData(url){
+try{
+let reponse= await fetch(url);
+let data=await response.json();
+console.log(data);
+}catch(error){
+console.error(error)}
 }
 
-main(2000).then(() => console.log("4 seconds"));
+getData()
 
-
-fetch('http://example.com/data.json')
-  .then(response => response.json())
-  .then(data => console.log(data))
-  .catch(error => console.error(error));
 ```
+> _What is API?-API stands for Application Programming Interface and is a concept that is not limited or specific to JavaScript, but is used in almost all web application languages._
+> _What is Fetch API?-The global fetch() method starts the process of fetching a resource from the network, returning a promise that is fulfilled once the response is available.The fetch() method's parameters are identical to those of the Request() constructor._
+
+> _Get Async_
+```js
+//get
+
+async function getData(){
+try{
+    let response=await fetch(url);
+    let data=await response.json();
+    console.log(data)  
+}catch(error){
+console.error(error)}
+}
+
+getData()
+```
+
+
