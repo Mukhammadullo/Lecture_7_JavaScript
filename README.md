@@ -77,7 +77,7 @@ getData()
 > _Get Async_
 ```js
 //get
-
+let url="https://jsonplaceholder.typicode.com/posts"
 async function getData(){
 try{
     let response=await fetch(url);
@@ -89,5 +89,29 @@ console.error(error)}
 
 getData()
 ```
+> _Post_Async_
+```js
 
+
+async function postUser(newUser){
+try{
+let reponse =await fetch(`${url}${id}`,
+method:"POST",
+headers:{
+Accept:"application/json"
+"Content-Type":"application/json",
+}
+body:JSON.stringify(newUser)
+}catch  (error){
+console.error(error)
+}
+}
+
+//newUser-is Object
+
+```
+
+> _PUT async_
+    ```js
+```
 
