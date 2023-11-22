@@ -135,7 +135,7 @@ console.error(error)
 > _DELETE async_
 ```js
 
-asycn function  delUser(id){
+async function  delUser(id){
 try{
 let reponse=await fetch(`${url}${id}`)
 }catch(error)
@@ -144,6 +144,67 @@ console.error(error)
 }
 }
 
- 
+ ```
+
+# _3.What is axios? 
+_Axios is a Javascript library used to make HTTP requests from node.js or XMLHttpRequests from the browser and it supports the Promise API that is native to JS ES6. It can be used intercept HTTP requests and responses and enables client-side protection against XSRF. It also has the ability to cancel requests._
+
+```js
+
+//use in inner->HTML
+//<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+//<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+//GET
+
+async function getData(){
+try{
+let {data}=await axios.get(`url`)
+}catch(error){
+console.error(error)
+}
+}
+
+//POST
+
+async funtion postUser(editUser){
+try{
+let {data}=await axios.post(`url`,editUser)
+}catch(error){
+consle.error(error)
+}
+}
+
+//user->is a obJect{}
+
 ```
+
+> _Put_
+```js
+
+async function putUser(id, editUser){
+try{
+let {data}= await axios.put(`$url}${id}`, editUser)
+}catch (error){
+console.error(error)
+}
+}
+
+```
+
+
+>_Delete_
+```js
+
+async function delUser(id){
+try{
+let {data}=await axios.delete(`${url}${id}`)
+}catch (error){
+console.error(error)
+}
+
+//id is a id of user
+
+```
+
 
