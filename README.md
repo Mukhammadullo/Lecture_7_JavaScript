@@ -113,5 +113,37 @@ console.error(error)
 
 > _PUT async_
     ```js
+async function putUser(editUser){
+try{
+let reponse =await fetch(`${url}${id}`,
+method:"PUT",
+headers:{
+Accept:"application/json"
+"Content-Type":"application/json",
+}
+body:JSON.stringify(editUser)
+}catch  (error){
+console.error(error)
+}
+}
+
+//id is a id of user
+//editUser is a object{}
+
+    ```
+
+> _DELETE async_
+```js
+
+asycn function  delUser(id){
+try{
+let reponse=await fetch(`${url}${id}`)
+}catch(error)
+{
+console.error(error)
+}
+}
+
+ 
 ```
 
