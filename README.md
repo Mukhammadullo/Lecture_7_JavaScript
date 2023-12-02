@@ -151,7 +151,7 @@ _Axios is a Javascript library used to make HTTP requests from node.js or XMLHtt
 
 ```js
 
-//use in inner->HTML
+//use in inner -> HTML
 //<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 //<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
